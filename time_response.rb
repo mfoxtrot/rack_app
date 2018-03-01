@@ -9,7 +9,7 @@ class TimeResponse
 
   def call
     check_formats
-    response
+    response_text
   end
 
   private
@@ -22,14 +22,6 @@ class TimeResponse
         @unknown_formats << f
       end
     end
-  end
-
-  def response
-    [
-      200,
-      {'Content-Type' => 'text/plain'},
-      [response_text]
-    ]
   end
 
   def response_text
